@@ -28,10 +28,9 @@ app.use(express.urlencoded({extended : false}));
 app.use(cors());
 //HTTP request logger
 app.use(morgan('tiny'));
-app.use('/',routes);
 
 if(process.env.NODE_ENV == 'production'){
     app.use(express.static('client/build'));
 }
-
+app.use('/',routes);
 app.listen(PORT, console.log(`Server is running at ${PORT}`))
