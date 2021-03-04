@@ -31,7 +31,7 @@ app.use(morgan('tiny'));
 app.use('/',routes);
 
 if(process.env.NODE_ENV == 'production'){
-    app.use(exepress.static('client/build'));
+    app.use(express.static('client/build'));
 }
 
 app.listen(PORT, console.log(`Server is running at ${PORT}`))
